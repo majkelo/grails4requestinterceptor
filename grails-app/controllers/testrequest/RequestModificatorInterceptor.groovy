@@ -3,9 +3,21 @@ package testrequest
 
 class RequestModificatorInterceptor {
 
-    boolean before() { true }
+	RequestModificatorInterceptor() {
+		match(controller: "*", action: "*")
+	}
 
-    boolean after() { true }
+	boolean before() {
+		println "INSIDE INTERCEPTOR; BEFORE"
+		println  params
+		println request.properties
+		params.qwe = 3
+		true
+	}
+
+    boolean after() {
+	    true
+    }
 
     void afterView() {
         // no-op
