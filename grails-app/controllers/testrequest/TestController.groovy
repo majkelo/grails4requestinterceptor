@@ -6,8 +6,8 @@ class TestController {
 
     def index() {
 	    println "INSIDE CONTROLLER"
-	    println params
-	    params.asd = 4
-	    render params as JSON
+	    println request.JSON
+	    request.JSON.incontroller = true
+	    render request.JSON as JSON
     }
 }

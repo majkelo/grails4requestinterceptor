@@ -9,9 +9,8 @@ class RequestModificatorInterceptor {
 
 	boolean before() {
 		println "INSIDE INTERCEPTOR; BEFORE"
-		println  params
-		println request.properties
-		params.qwe = 3
+		println request.JSON
+		request.JSON.before = "added"
 		true
 	}
 
